@@ -1,0 +1,52 @@
+// Hide carousel before it was initialized
+.carousel-1col,
+.carousel-3col, 
+.carousel-4col,
+.carousel-hero {
+	visibility: hidden;
+	opacity: 0;
+	.transition();
+
+	&.slick-initialized {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+
+// different styling for the carousel in the hero
+.carousel-hero {
+	background-color: @color-primary;
+
+	.slick-prev, .slick-next {
+		//background: transparent;
+
+		&:before {
+			color: @color-reverse;
+			.transition();
+		}
+
+		&:hover {
+			&:before {
+				color: @color-brand;
+			}
+		}
+	}
+
+	.slick-prev{
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+	}
+}
+
+.carousel-3col,
+.carousel-4col {
+	padding-left: 16px;
+
+	@media (min-width: @screen-md-min) {
+		.container;
+	}
+}

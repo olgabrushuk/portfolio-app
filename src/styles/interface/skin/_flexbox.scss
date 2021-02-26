@@ -1,0 +1,15 @@
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	//justify-content: space-around;
+
+	> * {
+		width: 100%;	
+		margin-bottom: 16px;
+
+		@include media-breakpoint-up(sm) {
+			width: calc(50% - 16px);
+			margin: 0 8px 16px;
+		}
+	}
+}

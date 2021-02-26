@@ -1,0 +1,73 @@
+.fact-item { // can be a link
+	font-family: @type-bold;
+	padding: 24px 24px 20px;
+	box-sizing: border-box;
+	display: flex !important;
+	flex-wrap: wrap;
+	flex-direction: column;
+	color: @color-reverse;
+
+	@media (min-width: @screen-lg-min) {
+
+		&, &.slick-slide {
+			min-height: 310px;
+		}
+	}
+
+	.fact__title {
+		font-family: @type-extrabold;
+	}
+
+	.fact__content {
+		flex: 1 0 auto;
+	}
+
+	.fact__cta {
+		.font-size(14);
+		&:after {
+			display: inline;
+			content: "\e901";
+			font-family: "icomoon";
+			font-size: 10px;
+			padding-left: 7px;
+			.transition();
+		}
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+
+		@media (min-width: @screen-md-min) {
+			.fact__cta span {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+}
+
+.carousel-4col {
+	.fact-item:nth-child(odd) {
+		background: @color-brand;
+		color: @color-reverse;
+
+		@media (min-width: @screen-md-min) {
+			&:hover {
+				background: darken(@color-brand, 8%);
+			}
+		}
+	}
+
+	.fact-item:nth-child(even) {
+		background: @color-primary;
+		color: @color-reverse;
+
+		@media (min-width: @screen-md-min) {
+			&:hover {
+				background: darken(@color-primary, 8%);
+			}
+		}
+	}
+}

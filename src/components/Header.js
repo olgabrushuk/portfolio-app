@@ -1,30 +1,42 @@
-import React from 'react'
+const toggleMenu = () => {
+	if (document.body.className.indexOf('nav-open') > -1) {
+		document.body.className = document.body.className.replace(/nav-open/g, '')
+	} else {
+		document.body.className += ' nav-open '
+	}
+	return false
+}
 
-function Header() {
+const Header = () => {
 	return (
 		<header className="header">
 			<div id="site-header" className="animate-me">
 				<div className="container">
 					<div className="site-header-wrapper">
-						<a href className="logo">
+						<a href="/" className="logo">
 							Olga Brushuk
 						</a>
 
-						<div id="navigation-toggle" data-gw-component="widget/toggle-menu">
+						<div className="navigation-toggle" onClick={toggleMenu}>
 							<span></span>
 							<span></span>
 							<span></span>
 						</div>
 
-						<div id="site-navigation" data-gw-component="widget/header-nav">
-							<div id="navigation-toggle" data-gw-component="widget/toggle-menu">
+						<div id="site-navigation">
+							<div className="navigation-toggle" onClick={toggleMenu}>
 								<span></span>
 								<span></span>
 								<span></span>
 							</div>
 
 							<nav className="nav" role="navigation">
-								{/* <?php custom_light_nav(); ?>							 */}
+								<ul>
+									<li>
+										<a href="/portfolio">Portfolio</a>
+										<a href="/about-me">About me</a>
+									</li>
+								</ul>
 							</nav>
 						</div>
 					</div>

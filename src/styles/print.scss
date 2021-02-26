@@ -1,0 +1,23 @@
+.animate-me,
+.animate-me-delayed,
+.animate-me-move-down,
+.animate-me-move-up {
+	opacity: 1 !important;
+}
+
+
+// grid
+.container {
+	width: 100%;
+}
+
+.no-padding .slab {
+    padding-bottom: 20px !important;
+}
+
+
+#site-navigation,
+#site-footer,
+#site-header {
+	display: none;
+}

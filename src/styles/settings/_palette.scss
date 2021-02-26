@@ -1,0 +1,16 @@
+// Brand colours
+$color-primary:    #242423; // Almost black
+$color-brand:      $color-primary; // Almost black
+$color-secondary:  #555555; // Dark grey
+$color-highlight:  #f5cb5c; // Yellow
+$color-lowlight:   #fafafa; // Lightest grey
+$color-subtle:     #e5e5e5; // Light grey
+
+
+// Additional colours
+$white:            #FFF;
+$black:            #333;
+$color-text:       $color-secondary;
+$color-reverse:    $white;
+$color-attention:  $color-highlight;
+$color-background: $color-lowlight;

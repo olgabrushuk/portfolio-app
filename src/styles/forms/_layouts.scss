@@ -1,0 +1,49 @@
+//
+// Description: Layouts for forms
+//
+
+//
+// MailChimp Signup Form
+//
+
+@mc-field-height: 50px;
+@mc-field-height-lg: 60px;
+
+/* Signup form container */
+#mc_embed_signup { 
+	border: none; 
+	text-align: center; 
+	width: 100%; 
+
+	/* positions input field horizontally */
+	.mc-field-group { 
+		position: relative;
+		max-width: 600px;
+		margin: 0 auto;
+	} 
+
+	/* Input Styles */
+	#mce-EMAIL { 
+		height: @mc-field-height;
+		@media (min-width: @screen-sm-min) {
+			height: @mc-field-height-lg;
+			padding-right: 185px; // HACK to fit the Submit button on the right
+		}
+	}
+
+	/* Button Styles */
+	.button { 
+		.btn;
+		padding: .6em 1.5em;
+		height: @mc-field-height;
+
+		@media (min-width: @screen-sm-min) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: .5em 1.5em;
+			height: @mc-field-height-lg;
+			font-size: 24px;
+		}	
+	} 
+}

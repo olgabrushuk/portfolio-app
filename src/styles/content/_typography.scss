@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400&family=Oswald:wght@300;400;600&display=swap');
+
+// Baseline
+$type-size: 16; // px
+$type-baseline: 1.5; // no unit
+$type-blankline: 1em; // any unit
+
+// Font stacks
+$type-regular: 'Chivo', sans-serif;
+$type-secondary: 'Oswald', sans-serif;
+
+//$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 600;
+
+$type-mono: Consolas, 'Lucida Console', Monaco, monospace;
+
+//
+// Document
+//
+body {
+	@include font-size(16);
+	line-height: $type-baseline;
+	font-family: $type-regular;
+	font-weight: $weight-regular;
+	color: $color-text;
+	-webkit-font-smoothing: antialiased;
+	border-top: 4px solid $color-brand;
+}
+
+#site-content {
+	background: $color-reverse;
+}
+
+//
+// Primary text elements
+//
+p,
+ul,
+ol,
+dd {
+	margin: 0 0 $type-blankline;
+}
+ul,
+ol,
+dl {
+	padding: 0 0 0 1.75em;
+}
+
+//
+// Headings
+// - OOCSS style headings allow markup to define document structure when the design does not.
+//
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: $type-secondary;
+	font-weight: normal;
+	color: $color-primary;
+}
+
+h1,
+.h1 {
+	margin: 0 0 0.4em;
+	text-transform: uppercase;
+	@include font-size(22);
+	@include line-height(48, 36);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(28);
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(36);
+	}
+}
+h2,
+.h2 {
+	margin: 0 0 0.4em;
+	text-transform: uppercase;
+	@include font-size(22);
+	@include line-height(42, 36);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(24);
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(28);
+	}
+}
+h3,
+.h3 {
+	margin: 0 0 0.4em;
+	text-transform: uppercase;
+	@include font-size(16);
+	@include line-height(28, 20);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(18);
+	}
+
+	@include media-breakpoint-up(xl) {
+		@include font-size(20);
+	}
+}
+h4,
+.h4,
+h5,
+.h5 {
+	margin: 0 0 0.8em;
+	@include font-size(16);
+	@include line-height(24, 18);
+
+	@include media-breakpoint-up(xl) {
+		@include font-size(18);
+	}
+}
+h6,
+.h6 {
+	margin: 0 0 0.5em;
+	font-size: 1em;
+	line-height: $type-baseline;
+}
+
+//
+// Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/>
+//
+.nano {
+	font-size: 10px;
+}
+.milli {
+	font-size: 12px;
+}
+.centi {
+	font-size: 14px;
+}
+.deci {
+	@include font-size(14);
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(16);
+	}
+}
+.kilo {
+	@include font-size(16);
+	@include line-height(28, 18);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(18);
+	}
+}
+.mega {
+	@include font-size(16);
+	@include line-height(28, 20);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(18);
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(20);
+	}
+}
+.giga {
+	@include font-size(18);
+	@include line-height(32, 22);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(20);
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(24);
+	}
+}
+.tera {
+	@include font-size(18);
+	@include line-height(38, 30);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(24);
+		margin: 0 0 0.5em;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(32);
+	}
+}
+.peta {
+	@include font-size(24);
+	@include line-height(48, 40);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(30);
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include font-size(40);
+		margin: 0 0 0.5em;
+	}
+}
+.exa {
+	margin: 0 0 0.5em;
+	@include font-size(30);
+	line-height: 1;
+
+	@include media-breakpoint-up(md) {
+		@include font-size(36);
+	}
+	@include media-breakpoint-up(lg) {
+		@include font-size(48);
+	}
+}
+.zetta {
+	margin: 0 0 0.3em;
+	@include font-size(34);
+	@include line-height(68, 60);
+
+	@include media-breakpoint-up(md) {
+		@include font-size(42);
+		line-height: 1.1;
+	}
+	@include media-breakpoint-up(lg) {
+		@include font-size(72);
+	}
+}
+
+//
+// Text colours
+//
+.brand {
+	color: $color-brand;
+}
+.primary {
+	color: $color-primary;
+}
+.secondary {
+	color: $color-secondary;
+}
+.highlight {
+	color: $color-highlight;
+}
+.black {
+	color: $black;
+}
+.reverse {
+	color: $color-reverse;
+}
+
+//
+// Font weight
+//
+strong,
+.bold {
+	font-weight: $weight-bold;
+}
+
+//
+// Text transforms
+//
+.caps {
+	text-transform: uppercase;
+}
+.lwc {
+	text-transform: lowercase;
+}

@@ -1,0 +1,53 @@
+// Pagination with WP classes
+
+.pagination {
+	text-align: center;
+	display: block;
+	margin: 10px 24px;
+
+	.page-numbers {
+		.font-size(16);
+		color: @color-primary;
+		line-height: 16px;
+		display: inline-block;
+		padding: 0 .2em;
+		border-bottom: 2px solid transparent;
+
+		&:hover {
+			text-decoration: none;
+			color: @color-brand;
+		}
+
+		&.current {
+			border-bottom: 2px solid @color-brand;
+		}
+
+		&.prev,
+		&.next {
+			line-height: 0;
+			font-size: 0; // hide default WP text
+			text-decoration: none;
+
+			&:before {
+				font-family: 'icomoon';
+				font-size: 12px;
+				line-height: 16px;
+				padding: 0 2px;
+				background: @color-reverse;
+				font-weight: bold;
+			}	
+		}
+
+		&.prev {
+			&:before {
+				content: "\e90b";
+			}
+		}
+
+		&.next {
+			&:before {
+				content: "\e909";
+			}
+		}
+	}
+}

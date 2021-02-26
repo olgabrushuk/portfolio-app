@@ -1,0 +1,21 @@
+.toggle {
+	.toggle__content {
+		p:last-child {
+			margin-bottom: 1em;
+		}
+	}
+	.toggle__button {
+		font-size: 16px;
+		color: @color-primary;
+
+		&:before {
+			content: "Read more";
+		}
+
+		&.is-open {
+			&:before {
+				content: "Read less";
+			}
+		}
+	}
+}
