@@ -1,8 +1,8 @@
-const PageTitle = () => {
+const PageTitle = ({ title }) => {
 	return (
 		<div className="slab slab--base slab--reverse d-md-none">
 			<div className="text-center">
-				<h1 className="base">Page title here</h1>
+				<h1 className="base">{title}</h1>
 			</div>
 		</div>
 	)

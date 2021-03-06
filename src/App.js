@@ -1,21 +1,20 @@
+import React from 'react'
 import { useRef, useEffect } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 import './styles/base.scss'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Textarea from './components/Textarea'
-import TwoColsImgText from './components/TwoColsImgText'
-import Teaser from './components/Teaser'
-import PageTitle from './components/PageTitle'
-import CtaButton from './components/CtaButton'
+import Home from './containers/Home'
+import About from './containers/About'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import './scripts/cookies'
 
-function App() {
+const App = () => {
 	gsap.registerPlugin(ScrollTrigger)
 	const ref = useRef(null)
 	const delayTime = 0.4,
@@ -99,11 +98,16 @@ function App() {
 	return (
 		<div ref={ref} className="App">
 			<Header />
-			<PageTitle />
-			<Teaser />
-			<TwoColsImgText />
-			<Textarea />
-			<CtaButton />
+			{/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+			<Switch>
+				<Route path="/about">
+					<About />
+				</Route>
+				<Route path="/">
+					<Home />
+				</Route>
+			</Switch>
 			<Footer />
 		</div>
 	)

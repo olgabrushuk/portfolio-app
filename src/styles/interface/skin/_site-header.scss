@@ -130,10 +130,8 @@ header {
 							color: $color-secondary;
 						}
 					}
-				}
 
-				&.current-menu-item {
-					> a {
+					&.current-menu-item {
 						border-bottom: 1px solid $color-text;
 
 						@include media-breakpoint-up(lg) {

@@ -1,14 +1,20 @@
-const CtaButton = () => {
+import { Link } from 'react-router-dom'
+
+const CtaButton = ({ ctaText, ctaUrl }) => {
 	return (
-		<div className="slab slab--reverse">
-			<div className="container">
-				<div className="text-center below-48 animate-me">
-					<a href="/" className="btn" target="_blank">
-						Cta Text here
-					</a>
+		<>
+			{ctaText && ctaUrl && (
+				<div className="slab slab--reverse">
+					<div className="container">
+						<div className="text-center below-24 animate-me">
+							<Link to={ctaUrl} className="btn">
+								{ctaText}
+							</Link>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
+			)}
+		</>
 	)
 }
 

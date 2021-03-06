@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 const toggleMenu = () => {
 	if (document.body.className.indexOf('nav-open') > -1) {
 		document.body.className = document.body.className.replace(/nav-open/g, '')
@@ -33,8 +35,12 @@ const Header = () => {
 							<nav className="nav" role="navigation">
 								<ul>
 									<li>
-										<a href="/portfolio">Portfolio</a>
-										<a href="/about-me">About me</a>
+										<NavLink exact={true} activeClassName="current-menu-item" to="/">
+											Portfolio
+										</NavLink>
+										<NavLink activeClassName="current-menu-item" to="/about">
+											About
+										</NavLink>
 									</li>
 								</ul>
 							</nav>

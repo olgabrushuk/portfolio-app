@@ -22,7 +22,7 @@ const Footer = () => {
 									<span className="icon-linkedin"></span>
 								</a>
 								<a
-									href="http://olgabrushuk.com/wp-content/uploads/2020/05/cv-olga-brushuk.pdf"
+									href={require('../assets/files/cv-olga-brushuk.pdf').default}
 									className="social"
 									target="_blank"
 									rel="noreferrer"
