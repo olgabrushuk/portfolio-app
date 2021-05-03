@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRef, useEffect } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 
 import './styles/base.scss'
 
@@ -15,6 +15,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './scripts/cookies'
 
 const App = () => {
+	const location = useLocation()
+	console.log(location)
 	gsap.registerPlugin(ScrollTrigger)
 	const ref = useRef(null)
 	const delayTime = 0.4,
@@ -37,7 +39,7 @@ const App = () => {
 				}
 			)
 		})
-	}, [])
+	}, [location.pathname])
 
 	useEffect(() => {
 		const element = ref.current
@@ -55,7 +57,7 @@ const App = () => {
 				}
 			)
 		})
-	}, [])
+	}, [location.pathname])
 
 	useEffect(() => {
 		const element = ref.current
@@ -74,7 +76,7 @@ const App = () => {
 				}
 			)
 		})
-	}, [])
+	}, [location.pathname])
 
 	useEffect(() => {
 		const element = ref.current
@@ -93,7 +95,7 @@ const App = () => {
 				}
 			)
 		})
-	}, [])
+	}, [location.pathname])
 
 	return (
 		<div ref={ref} className="App">
