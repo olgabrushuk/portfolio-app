@@ -9,6 +9,10 @@ const toggleMenu = () => {
 	return false
 }
 
+const closeMenu = () => {
+	document.body.className = document.body.className.replace(/nav-open/g, '')
+}
+
 const Header = () => {
 	return (
 		<header className="header">
@@ -35,11 +39,16 @@ const Header = () => {
 							<nav className="nav" role="navigation">
 								<ul>
 									<li>
-										<NavLink exact={true} activeClassName="current-menu-item" to="/">
-											Portfolio
+										<NavLink
+											exact={true}
+											activeClassName="current-menu-item"
+											to="/"
+											onClick={closeMenu}
+										>
+											<span>Portfolio</span>
 										</NavLink>
-										<NavLink activeClassName="current-menu-item" to="/about">
-											About
+										<NavLink activeClassName="current-menu-item" to="/about" onClick={closeMenu}>
+											<span>About</span>
 										</NavLink>
 									</li>
 								</ul>

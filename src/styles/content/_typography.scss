@@ -26,6 +26,11 @@ body {
 	color: $color-text;
 	-webkit-font-smoothing: antialiased;
 	border-top: 4px solid $color-brand;
+
+	&.nav-open {
+		position: fixed;
+		overflow-y: scroll;
+	}
 }
 
 #site-content {

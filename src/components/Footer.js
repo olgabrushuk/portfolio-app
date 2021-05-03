@@ -1,10 +1,28 @@
 import Cookies from 'js-cookie'
+import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 
 const Footer = () => {
+	const history = useHistory()
+	const [rightsNote, setRightsNote] = useState(false)
+
 	const closeCookieBanner = () => {
 		Cookies.set('cookienotice', '1', { expires: 365 })
 		document.getElementByClass('cookie-notice').slideUp(200)
 	}
+
+	useEffect(() => {
+		if (history.location.pathname === '/') {
+			setRightsNote(true)
+		}
+		return history.listen(location => {
+			if (location.pathname === '/') {
+				setRightsNote(true)
+			} else {
+				setRightsNote(false)
+			}
+		})
+	}, [history])
 
 	return (
 		<>
@@ -35,10 +53,12 @@ const Footer = () => {
 							</div>
 						</div>
 						<div className="col-12 col-md-8 order-md-first">
-							<div className="below-16 milli">
-								*Implemented during the emloyment at{' '}
-								<a href="https://www.konstructive.com">Konstructive Ltd</a>
-							</div>
+							{rightsNote && (
+								<div className="below-16 milli">
+									*Implemented during the emloyment at{' '}
+									<a href="https://www.konstructive.com">Konstructive Ltd</a>
+								</div>
+							)}
 							<span className="milli">
 								© <script>document.write(new Date().getFullYear())</script> Olga Brushuk
 							</span>

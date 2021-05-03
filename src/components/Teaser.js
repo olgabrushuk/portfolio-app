@@ -4,7 +4,6 @@ const Teaser = ({ imgBg, imgMain, title, copy, ctaText, ctaUrl, order }) => {
 			<div className="container">
 				<div className="teaser">
 					<div className="row align-items-center">
-						{console.log({ order })}
 						{imgBg && imgMain && (
 							<div className={`col-md-7 ${order}`}>
 								<div className="teaser__images animate-me">
