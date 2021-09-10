@@ -16,7 +16,6 @@ import './scripts/cookies'
 
 const App = () => {
 	const location = useLocation()
-	console.log(location)
 	gsap.registerPlugin(ScrollTrigger)
 	const ref = useRef(null)
 	const delayTime = 0.4,

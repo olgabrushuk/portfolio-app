@@ -55,7 +55,7 @@ const Footer = () => {
 						<div className="col-12 col-md-8 order-md-first">
 							{rightsNote && (
 								<div className="below-16 milli">
-									*Implemented during the emloyment at{' '}
+									*Implemented during the employment at{' '}
 									<a href="https://www.konstructive.com">Konstructive Ltd</a>
 								</div>
 							)}
